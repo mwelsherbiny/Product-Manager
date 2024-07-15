@@ -1,0 +1,1 @@
+<footer>    <hr>    <p>Scandiweb Test assigment</p></footer>
