@@ -1,0 +1,1 @@
+<?phpnamespace app\Models;require_once("Product.php");class DVD extends Product{    function __construct($info, $size)    {        parent::__construct($info);        $this->info["property"] = $size . "MB";    }    function getInfo()    {        return $this->info;    }}

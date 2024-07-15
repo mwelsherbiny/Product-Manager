@@ -1,0 +1,1 @@
+<?phpnamespace app\Models;require_once("Product.php");class Furniture extends Product{    function __construct($info, $dimensions)    {        parent::__construct($info);        $this->info["property"] = $dimensions;    }    function getInfo()    {        return $this->info;    }}

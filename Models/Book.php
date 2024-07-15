@@ -1,0 +1,1 @@
+<?phpnamespace app\Models;require_once("Product.php");class Book extends Product{    function __construct($info, $weight)    {        parent::__construct($info);        $this->info["property"] = $weight . "KG";    }    function getInfo()    {        return $this->info;    }}
