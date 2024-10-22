@@ -2,12 +2,10 @@
 
 namespace Core;
 
-use Controllers\ProductController;
-
 class Router
 {
-    private $getRoutes;
-    private $postRoutes;
+    private array $getRoutes;
+    private array $postRoutes;
 
     public function addRoute($method, $url, $target)
     {

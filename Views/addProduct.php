@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -46,5 +42,6 @@
             <p id="description">Please, provide size</p>
         </div>
     </form>
+    <?php require "static/footer.html" ?>
 </body>
 </html>

@@ -2,13 +2,12 @@
 
 namespace Core;
 
-use Models\Product;
-
 class ProductAPI
 {
     static function deleteProduct(): void
     {
-        $sku = explode("/api.php/products/", $_SERVER["REQUEST_URI"])[1];
+
+        $sku = explode("/api.php/products/delete/", $_SERVER["REQUEST_URI"])[1];
         $db = new Database();
 
         if ($db->deleteProduct($sku)) {
@@ -20,8 +19,8 @@ class ProductAPI
         }
     }
 
-    static function addProduct() {
-
+    static function addProduct(): void
+    {
         $info = json_decode(file_get_contents('php://input'), true);
 
         $db = new Database();

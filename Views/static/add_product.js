@@ -97,7 +97,7 @@ async function validateInput(event)
     const property = getProperty()
 
     fetch(
-        "/api.php/products/", {
+        "/api.php/products/add/", {
             method: "POST",
             body: JSON.stringify({
                 "sku": document.getElementById("sku").value,

@@ -12,7 +12,9 @@
     <header>
         <h1>Product List</h1>
         <div class="buttons">
-            <button class="clickable" onclick="window.location.href='/add-product';">ADD</button>
+            <a href="/add-product">
+                <button class="clickable">ADD</button>
+            </a>
             <button class="clickable" onclick="massDelete()" id="delete-product-btn">MASS DELETE</button>
         </div>
     </header>

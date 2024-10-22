@@ -1,14 +1,11 @@
 async function deleteProduct(url) {
-    const response = await fetch(url, {
-        method: 'DELETE',
+    await fetch(url, {
+        method: 'POST',
         headers: {
             'Content-type': 'application/json'
-        }
+        },
     });
-
-    const resData = 'resource deleted...';
-
-    return resData;
+    return 'resource deleted...';
 }
 
 function massDelete(event) {
@@ -20,13 +17,9 @@ function massDelete(event) {
 
     checkboxes.forEach(checkbox => {
         if (checkbox.checked) {
-            deleteProduct("/api.php/products/" + checkbox.getAttribute("name"));
+            deleteProduct("/api.php/products/delete/" + checkbox.getAttribute("name"));
             const sku = checkbox.getAttribute("name");
             document.getElementById(sku).remove();
         }
     });
-}
-
-function addProduct() {
-
 }
