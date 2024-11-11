@@ -16,4 +16,9 @@ class Book extends Product
     {
         return "Weight: " . $this->attribute . "KG";
     }
+
+    function getTypeId(): int
+    {
+        return 2;
+    }
 }

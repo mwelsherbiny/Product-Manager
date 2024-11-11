@@ -16,4 +16,9 @@ class DVD extends Product
     {
         return "Size: " . $this->attribute . " MB";
     }
+
+    function getTypeId(): int
+    {
+        return 1;
+    }
 }

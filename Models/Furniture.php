@@ -16,4 +16,9 @@ class Furniture extends Product
     {
         return "Dimension: " . $this->attribute;
     }
+
+    function getTypeId(): int
+    {
+        return 3;
+    }
 }

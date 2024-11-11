@@ -83,6 +83,8 @@ abstract class Product
 
     abstract public function getAttributeString();
 
+    abstract function getTypeId();
+
     static function validateInfo($info): array
     {
         $errors = self::isFilled($info);
@@ -138,4 +140,6 @@ abstract class Product
 
         return $errors;
     }
+
+
 }

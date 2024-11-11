@@ -53,29 +53,12 @@ JOIN type ON product.type_id = type.type_id");
         $errors = Product::validateInfo($info);
         if (sizeof($errors) == 0)
         {
-            $typeId = $this->getTypeId($info["type"]);
+            $product = ProductFactory::createProduct($info["type"], $info["sku"], $info["price"], $info["name"], $info["property"]);
             $stmt = $this->pdo->prepare("INSERT INTO product (sku, name, price, type_id, property) 
 VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$info["sku"], $info["name"], $info["price"], $typeId, $info["property"]]);
+            $stmt->execute([$product->getSku(), $product->getName(), $product->getPrice(), $product->getTypeId(), $product->getattribute()]);
         }
         return $errors;
-    }
-
-    private function getTypeId($type): int
-    {
-        if ($type == "DVD")
-        {
-            return 1;
-        }
-        else if ($type == "Book")
-        {
-            return 2;
-        }
-        else if ($type == "Furniture")
-        {
-            return 3;
-        }
-        return -1;
     }
 
     public function getSKU()
